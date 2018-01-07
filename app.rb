@@ -1,17 +1,10 @@
 require "sinatra"
 
+class Battle < Sinatra::Base
+  get '/' do
+    'Hello Battle!'
+  end
 
-get "/random-cat" do
-  @name = ["Amigo", "Oscar", "Viking"].sample
-  erb :index
-end
-
-post "/named-cat" do
-  p params
-  @name = params[:name]
-  erb :index
-end
-
-get '/cat-form' do
-  erb :cat_form
+  # start the server if ruby file executed directly
+  run! if app_file == $0
 end
