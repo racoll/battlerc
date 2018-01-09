@@ -14,5 +14,13 @@ feature "Attacking" do
     expect(page).to have_content "rory: 50HP"
   end
 
+  scenario "be attacked by player 2" do
+    sign_in_and_play
+    click_button "Attack"
+    click_button "OK"
+    click_button "Attack"
+    expect(page).to have_content "rory attacked rob"
+  end
+
 
 end
